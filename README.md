@@ -6,7 +6,7 @@ This course provides an introduction to computer programming using modern
 programming languages as a way to solve problems. It focuses on programming 
 concepts and fundamentals within the context of solving real world problems.
 
-**Please read the syllabus (syllabusINF465s2019.pdf) for more 
+**Please read the syllabus (syllabusINF108f2019.pdf) for more 
 information.**
 
 ---
