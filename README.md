@@ -21,3 +21,15 @@ the syllabus all along. If you have a question, make sure it hasn't
 already been answered. If you ask a question to clarify something 
 specific that you found confusing *after* reading the syllabus, that 
 is appropriate and encouraged. 
+
+* **achievementList.pdf** is the list of possible achievements for the course.
+If you aren't sure what it's for, read about grading in the syllabus.
+
+* **individualActivities** is a folder containing all individual homework
+assignments. These aren't mandatory (see grading & achievements in the syllabus)
+but you will need to do a certain number of them to reach certain grades.
+
+* **teamActivities** is a folder containing all in-class team activities.
+Like individual activities, these aren't mandatory. However, you will have
+trouble doing well in the class if you don't participate as regularly as possible.
+
