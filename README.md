@@ -14,7 +14,7 @@ information.**
  * **howToCloneRepository.md** contains a walkthrough of creating a 
 repository on the unix command line
  
- * **syllabusINF465s2019.pdf** is the syllabus. Read it. You 
+ * **syllabusINF465f2019.pdf** is the syllabus. Read it. You 
 know how they say there is no such thing as a bad question? They're 
 wrong. A bad question is when you ask a question and the answer was in 
 the syllabus all along. If you have a question, make sure it hasn't 
