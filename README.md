@@ -33,3 +33,6 @@ but you will need to do a certain number of them to reach certain grades.
 Like individual activities, these aren't mandatory. However, you will have
 trouble doing well in the class if you don't participate as regularly as possible.
 
+* **Handy links**
+  * [list of common git commands](https://github.com/joshnh/Git-Commands)
+  * [git cheat sheet](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf)
