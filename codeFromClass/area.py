@@ -6,8 +6,8 @@
 '''
 
 
-width = 5.2
-height = 10.2
+width = 0
+height = 0
 
 areaOfRectangle = width * height
 
