@@ -3,12 +3,11 @@
  * 2 negatives
  * 1 zero
  * 2 zeros
- * floats
 '''
 
 
-width = 5
-height = 10
+width = 5.2
+height = 10.2
 
 areaOfRectangle = width * height
 
