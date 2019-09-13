@@ -4,4 +4,5 @@ height = 10
 
 areaOfRectangle = abs(width * height)
 
-print(areaOfRectangle)
+
+print("Area of", width, "x",height, "rectangle:", areaOfRectangle)
