@@ -6,8 +6,14 @@ a
 multi-line
 comment '''
 
-width = -5
-height = 10
+'''width = -5
+height = 10'''
+
+width = input("Width")
+height = input("Height")
+
+width = int(width)
+height = int(height)
 
 areaOfRectangle = abs(width * height)
 
