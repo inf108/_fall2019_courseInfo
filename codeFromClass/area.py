@@ -9,11 +9,11 @@ comment '''
 '''width = -5
 height = 10'''
 
-width = input("Width")
-height = input("Height")
+width = input("Width: ")
+height = input("Height: ")
 
-width = int(width)
-height = int(height)
+width = float(width)
+height = float(height)
 
 areaOfRectangle = abs(width * height)
 
