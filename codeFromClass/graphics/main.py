@@ -11,9 +11,9 @@ def main():
     circle = Circle(Point(250,250), 100)
     circle.draw(win)
     
-    rectangle = Rectangle(Point(250,250), Point(300,400))
-    rectangle.setFill("red")
-    rectangle.draw(win)
+
+    drawRectangle(win, Point(0,0), Point(40,30), "red")
+    drawRectangle(win, Point(40,27), Point(56,39), "blue")
     
     win.getMouse() # Pause to view result
     win.close()    # Close window when done
