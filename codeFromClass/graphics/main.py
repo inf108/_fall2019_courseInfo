@@ -14,6 +14,7 @@ def main():
 
     drawRectangle(win, Point(0,0), Point(40,30), "red")
     drawRectangle(win, Point(40,27), Point(56,39), "blue")
+    drawRectangle(win, Point(200,400), Point(266,412), "green")
     
     win.getMouse() # Pause to view result
     win.close()    # Close window when done
