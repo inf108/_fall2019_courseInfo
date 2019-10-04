@@ -3,6 +3,8 @@
 
 from graphics import *
 
+
+#define main function
 def main():
     win = GraphWin("My Circle", 500, 500)
     
