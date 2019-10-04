@@ -4,6 +4,11 @@
 from graphics import *
 
 
+def drawRectangle(window, point1, point2, color):
+    rectangle = Rectangle(point1, point2)
+    rectangle.setFill(color)
+    rectangle.draw(window)
+
 #define main function
 def main():
     win = GraphWin("My Circle", 500, 500)
