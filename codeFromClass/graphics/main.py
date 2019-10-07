@@ -9,7 +9,8 @@ from roof import *
 def main():
     win = GraphWin("My House", 500, 500)
 
-    
+    drawHouse(win)
+    drawRoof(win)
     
     win.getMouse() # Pause to view result
     win.close()    # Close window when done
