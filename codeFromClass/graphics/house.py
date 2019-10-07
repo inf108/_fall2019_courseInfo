@@ -14,4 +14,12 @@ def drawRectangle(window, point1, point2, color):
     rectangle.setFill(color)
     rectangle.draw(window)
 
+def drawHouse(window):
+    drawRectangle(window, Point(150,150), Point(350,350), "yellow")
+
+'''
+# for testing
+win = GraphWin("My Circle", 500, 500)
+drawHouse(win)
+'''
 
