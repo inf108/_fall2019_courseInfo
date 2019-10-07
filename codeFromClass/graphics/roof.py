@@ -9,7 +9,14 @@ def pointOffset(point, x, y):
     return Point(newX, newY)
 
 
-def drawRectangle(window, point1, point2, color):
-    rectangle = Rectangle(point1, point2)
-    rectangle.setFill(color)
-    rectangle.draw(window)
+def drawTriangle(window, point1, point2, point3, color):
+    triangle = Polygon(point1, point2, point3)
+    triangle.setFill(color)
+    triangle.draw(window)
+
+def drawRoof(window):
+    drawTriangle(win, Point(100,150), Point(400, 150), Point(250, 50), "red")
+
+# test
+win = GraphWin("My Circle", 500, 500)
+drawRoof(win)
