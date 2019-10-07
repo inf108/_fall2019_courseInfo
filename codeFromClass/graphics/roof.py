@@ -15,8 +15,10 @@ def drawTriangle(window, point1, point2, point3, color):
     triangle.draw(window)
 
 def drawRoof(window):
-    drawTriangle(win, Point(100,150), Point(400, 150), Point(250, 50), "red")
+    drawTriangle(window, Point(100,150), Point(400, 150), Point(250, 50), "red")
 
+'''
 # test
 win = GraphWin("My Circle", 500, 500)
 drawRoof(win)
+'''
