@@ -9,6 +9,13 @@ from roof import *
 def main():
     win = GraphWin("My House", 500, 500)
 
+    drawRandomCloud(win)
+    drawRandomCloud(win)
+    drawRandomCloud(win)
+    drawRandomCloud(win)
+    drawRandomCloud(win)
+    drawRandomCloud(win)
+
     drawHouse(win)
     drawRoof(win)
     
