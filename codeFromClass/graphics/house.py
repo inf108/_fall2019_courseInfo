@@ -14,8 +14,8 @@ def drawRectangle(window, point1, point2, color):
     rectangle.setFill(color)
     rectangle.draw(window)
 
-def drawHouse(window):
-    drawRectangle(window, Point(150,150), Point(350,350), "yellow")
+def drawHouse(window, color):
+    drawRectangle(window, Point(150,150), Point(350,350), color)
 
 '''
 # for testing
