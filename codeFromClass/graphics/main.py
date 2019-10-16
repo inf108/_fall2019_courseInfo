@@ -9,7 +9,7 @@ from roof import *
 def main():
     win = GraphWin("My House", 500, 500)
 
-    entry = Entry(Point(30,480), 30)
+    entry = Entry(Point(250,480), 20)
     entry.draw(win)
 
     drawRandomCloud(win)
