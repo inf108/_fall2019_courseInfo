@@ -31,14 +31,10 @@ def main():
         colorName = "orange"
     else:
         colorName = "green"
-        
-    
     
     drawHouse(win, colorName)
     drawRoof(win)
 
-    
-    
     #win.getMouse() # Pause to view result
     #win.close()    # Close window when done
 
