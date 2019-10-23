@@ -38,7 +38,7 @@ def drawHouse(window, color):
         rowOfBricks(window, x, y, color, heightOfBrick)
         y = y + heightOfBrick
     '''
-    panes = [Point(175, 175), Point(175, 275), Point(275, 175), Point(275, 275), Point(200,350)]
+    panes = [Point(175, 175), Point(175, 275), Point(275, 175), Point(275, 275), Point(225,310), Point(225,270)]
     for pane in panes:
       drawPane(window, pane)
 

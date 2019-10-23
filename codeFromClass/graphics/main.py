@@ -14,7 +14,6 @@ def main():
 
     for i in range(20):
         drawRandomCloud(win)
-        print(i)
 
     win.getKey()
     colorChoice = entry.getText()
