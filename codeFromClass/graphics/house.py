@@ -15,6 +15,9 @@ def drawRectangle(window, point1, point2, color):
     rectangle.draw(window)
 
 
+def drawPane(window, point):
+    drawRectangle(window, point, pointOffset(point, 40, 40), "lightgrey")
+
 def rowOfBricks(window, x, y, color, heightOfBrick):
     widthOfBrick = 20   
     while (x < 350):
@@ -26,12 +29,18 @@ def rowOfBricks(window, x, y, color, heightOfBrick):
 
 def drawHouse(window, color):
     drawRectangle(window, Point(150,150), Point(350,350), color)
+
+    '''
     heightOfBrick = 10
     x = 150
     y = 150
     while (y < 350):        
         rowOfBricks(window, x, y, color, heightOfBrick)
         y = y + heightOfBrick
+    '''
+    panes = [Point(175, 175), Point(175, 275), Point(275, 175), Point(275, 275), Point(200,350)]
+    for pane in panes:
+      drawPane(window, pane)
 
 
 '''
