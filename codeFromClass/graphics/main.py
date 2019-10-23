@@ -12,12 +12,9 @@ def main():
     entry = Entry(Point(250,480), 20)
     entry.draw(win)
 
-    drawRandomCloud(win)
-    drawRandomCloud(win)
-    drawRandomCloud(win)
-    drawRandomCloud(win)
-    drawRandomCloud(win)
-    drawRandomCloud(win)
+    for i in range(20):
+        drawRandomCloud(win)
+        print(i)
 
     win.getKey()
     colorChoice = entry.getText()
