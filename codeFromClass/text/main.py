@@ -3,6 +3,6 @@ for lines in textFile:
   lowerCaseLines = lines.lower()
   for letter in lowerCaseLines:
     
-    print(ord(letter), end = '')
+    print(ord(letter)-97, end = '')
 textFile.close()
 
