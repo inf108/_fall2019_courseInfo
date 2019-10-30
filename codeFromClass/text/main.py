@@ -9,11 +9,24 @@ def rotateLetter(letter):
   encodedLetter = chr(numericLetter)
   return encodedLetter
 
+
+
 for lines in textFile:
   lowerCaseLines = lines.lower()
   for letter in lowerCaseLines:
-    encodedLetter = rotateLetter(letter)
-    print(encodedLetter, end = '')
+
+    isLetter = (ord(letter) >= 97) and (ord(letter) <= 122)
+    
+    if (isLetter):
+      encodedLetter = rotateLetter(letter)
+      print(encodedLetter, end = '')
+    else:
+      print(letter, end='')
+      
+      
+    
 textFile.close()
 
-print()
+
+
+
