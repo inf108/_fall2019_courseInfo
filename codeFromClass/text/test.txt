@@ -1,1 +1,4 @@
-abcdefghijklmnopqrstuvwxyz
+does this handle spaces?
+what about punctation . / > \ ;)
+numbers? 12345675783
+~[=
