@@ -7,3 +7,4 @@ print any of the things below to a file, depending on how far you are
 3. use rot 13 encryption 
 4. refactor
 5. modify so it passes through weird characters, numbers, and punctuation
+6. try using a random rotation with a seed instead of rot 13
