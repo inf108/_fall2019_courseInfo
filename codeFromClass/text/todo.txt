@@ -1,4 +1,8 @@
 1. read & print a file
+
+1a. read the lines of the input file and write them to the output file or
+print any of the things below to a file, depending on how far you are
+
 2. turn characters into ordinals and print the numbers for each character
 3. use rot 13 encryption 
 4. refactor
