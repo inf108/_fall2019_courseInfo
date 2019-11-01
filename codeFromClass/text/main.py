@@ -2,7 +2,6 @@ rotation = 13
 inTextFile = open("test.txt", "r")
 outTextFile = open("out.txt", "w")
 
-
 def rotateLetter(letter):
   numericLetter = ord(letter) - 97
   numericLetter += rotation
@@ -11,23 +10,16 @@ def rotateLetter(letter):
   encodedLetter = chr(numericLetter)
   return encodedLetter
 
-
-
 for lines in inTextFile:
   lowerCaseLines = lines.lower()
   encodedLine = ""
   for letter in lowerCaseLines:
-    
     isLetter = (ord(letter) >= 97) and (ord(letter) <= 122)
-    
     if (isLetter):
       encodedLetter = rotateLetter(letter)
-      #print(encodedLetter, end = '')
       encodedLine += encodedLetter
     else:
-      #print(letter, end='')
       encodedLine += letter
-  #print(encodedLine)
   outTextFile.write(encodedLine)    
     
 inTextFile.close()
