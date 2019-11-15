@@ -10,7 +10,12 @@ def main():
   c = Circle(Point(x,y), radius)
   c.draw(win)
 
-  r = Rectangle(Point(25, 25), Point(75, 75))
+  topLeftX = x - radius
+  topLeftY = y
+  bottomRightX = x + radius
+  bottomRightY = y + 2*radius
+  
+  r = Rectangle(Point(topLeftX, topLeftY), Point(bottomRightX, bottomRightY))
   r.draw(win)
 
 
