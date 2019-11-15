@@ -5,8 +5,9 @@ def main():
 
   x = 150
   y = 150
+  radius = 50
   
-  c = Circle(Point(x,y), 10)
+  c = Circle(Point(x,y), radius)
   c.draw(win)
 
   r = Rectangle(Point(25, 25), Point(75, 75))
