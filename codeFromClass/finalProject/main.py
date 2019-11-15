@@ -5,8 +5,11 @@ def dalekTop(win, size):
   x = 150
   y = 150
   radius = size
+  domeColor = "grey"
+  bodyColor = "grey"
   
   c = Circle(Point(x,y), radius)
+  c.setFill(domeColor)
   c.draw(win)
 
   topLeftX = x - radius
@@ -15,6 +18,7 @@ def dalekTop(win, size):
   bottomRightY = y + 2*radius
   
   r = Rectangle(Point(topLeftX, topLeftY), Point(bottomRightX, bottomRightY))
+  r.setFill(bodyColor)
   r.draw(win)
 
 
