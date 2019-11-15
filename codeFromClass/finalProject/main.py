@@ -1,11 +1,10 @@
 from graphics import *
 
-def main():
-  win = GraphWin("Dalek", 300, 500)
-
+#(win, 75)
+def dalekTop(win, size):
   x = 150
   y = 150
-  radius = 50
+  radius = size
   
   c = Circle(Point(x,y), radius)
   c.draw(win)
@@ -17,6 +16,14 @@ def main():
   
   r = Rectangle(Point(topLeftX, topLeftY), Point(bottomRightX, bottomRightY))
   r.draw(win)
+
+
+def main():
+  win = GraphWin("Dalek", 300, 500)
+
+  dalekTop(win, 75)
+
+  
 
 
   
