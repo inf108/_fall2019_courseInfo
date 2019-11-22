@@ -2,18 +2,17 @@ from graphics import *
 
 #(win, 75)
 def dalekTop(win, x, y, size):
-  radius = size
   domeColor = "grey"
   bodyColor = "grey"
   
-  c = Circle(Point(x,y), radius)
+  c = Circle(Point(x,y), size)
   c.setFill(domeColor)
   c.draw(win)
 
-  topLeftX = x - radius
+  topLeftX = x - size
   topLeftY = y
-  bottomRightX = x + radius
-  bottomRightY = y + radius
+  bottomRightX = x + size
+  bottomRightY = y + size
   
   r = Rectangle(Point(topLeftX, topLeftY), Point(bottomRightX, bottomRightY))
   r.setFill(bodyColor)
