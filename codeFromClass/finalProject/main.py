@@ -6,12 +6,7 @@ def createCircle(win, x, y, size, color):
   c.draw(win)
   return c
 
-def dalekTop(win, x, y, size):
-  domeColor = "grey"
-  bodyColor = "grey"
-  
-  c = createCircle(win, x, y, size, domeColor)
-
+def createRectangle(win, x, y, size, bodyColor):
   topLeftX = x - size
   topLeftY = y
   bottomRightX = x + size
@@ -20,6 +15,14 @@ def dalekTop(win, x, y, size):
   r = Rectangle(Point(topLeftX, topLeftY), Point(bottomRightX, bottomRightY))
   r.setFill(bodyColor)
   r.draw(win)
+  return r
+
+def dalekTop(win, x, y, size):
+  domeColor = "grey"
+  bodyColor = "grey"
+  
+  c = createCircle(win, x, y, size, domeColor)
+  r = createRectangle(win, x, y, size, bodyColor)
 
   return [c, r]
 
