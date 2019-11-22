@@ -40,6 +40,11 @@ def createDalekBottom(win, x, y, size):
 
   return [p]
 
+def isDalekMoving(winX, size, dalek):
+  stoppingPointX = (winX - size - 0.1 * winX)
+  dalekX = dalek[0].getCenter().getX()
+  return stoppingPointX >= dalekX
+
 def createDalek(win, x, y, size):
   top = createDalekTop(win, x, y, size)
   bottom = createDalekBottom(win, x, y + size, size)
@@ -48,22 +53,22 @@ def createDalek(win, x, y, size):
 
 
 def main():
+  winX = 1440
+  winY = 900
   size = 75
   dalekSpeed = 10
   dalekX = 250
   dalekY = 500
 
-  win = GraphWin("Dalek", 1440, 900)
+  win = GraphWin("Dalek", winX, winY)
 
   dalek = createDalek(win, dalekX, dalekY, size)
-
-  while (True):
-    
-    #print(dalekX)
+  
+  while (isDalekMoving(winX, size, dalek)):
     
     for part in dalek:
       part.move(dalekSpeed, 0)
-
+    
     time.sleep(0.1)
 
   
