@@ -17,7 +17,7 @@ def createRectangle(win, x, y, size, bodyColor):
   r.draw(win)
   return r
 
-def dalekTop(win, x, y, size):
+def createDalekTop(win, x, y, size):
   domeColor = "grey"
   bodyColor = "grey"
   
@@ -26,7 +26,7 @@ def dalekTop(win, x, y, size):
 
   return [c, r]
 
-def dalekBottom(win, x, y, size):
+def createDalekBottom(win, x, y, size):
   top = y
   bottom = y + size*3
   topL = x - size
@@ -41,8 +41,8 @@ def dalekBottom(win, x, y, size):
   return [p]
 
 def createDalek(win, x, y, size):
-  top = dalekTop(win, x, y, size)
-  bottom = dalekBottom(win, x, y + size, size)
+  top = createDalekTop(win, x, y, size)
+  bottom = createDalekBottom(win, x, y + size, size)
 
   return top + bottom
 
