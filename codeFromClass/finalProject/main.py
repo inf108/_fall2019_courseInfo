@@ -1,13 +1,16 @@
 from graphics import *
 
-#(win, 75)
+def createCircle(win, x, y, size, color):
+  c = Circle(Point(x,y), size)
+  c.setFill(color)
+  c.draw(win)
+  return c
+
 def dalekTop(win, x, y, size):
   domeColor = "grey"
   bodyColor = "grey"
   
-  c = Circle(Point(x,y), size)
-  c.setFill(domeColor)
-  c.draw(win)
+  c = createCircle(win, x, y, size, domeColor)
 
   topLeftX = x - size
   topLeftY = y
