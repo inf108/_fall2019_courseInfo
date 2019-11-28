@@ -56,9 +56,10 @@ def main():
   winX = 1440
   winY = 900
   size = 75
-  dalekSpeed = 10
+  dalekSpeed = 1
   dalekX = 250
   dalekY = 500
+  timeBetweenFrames = 0.01
 
   win = GraphWin("Dalek", winX, winY)
 
@@ -69,7 +70,7 @@ def main():
     for part in dalek:
       part.move(dalekSpeed, 0)
     
-    time.sleep(0.1)
+    time.sleep(timeBetweenFrames)
 
   
   win.getMouse() # Pause to view result
