@@ -56,7 +56,8 @@ def createDalek(win, x, y, size):
 def main():
   winX = 1440
   winY = 900
-  size = 75
+
+  dalekSize = 75
   dalekSpeed = 1
   dalekX = 250
   dalekY = 500
@@ -71,7 +72,7 @@ def main():
   tardis = createTardis(win, tardisX, tardisY, tardisSize)
   dalek = createDalek(win, dalekX, dalekY, dalekSize)
   
-  while (isDalekMoving(winX, size, dalek)):
+  while (isDalekMoving(winX, dalekSize, dalek)):
     
     for part in dalek:
       part.move(dalekSpeed, 0)
