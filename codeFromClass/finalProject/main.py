@@ -74,16 +74,43 @@ def createDalekBase(win, x, y, size, color):
   return p
 
 
+
+def createDalekPanels(win, backdrop, size):
+  topLeftX = backdrop.getPoints()[0].getX()
+  topRightX = backdrop.getPoints()[1].getX()
+  bottomRighX = backdrop.getPoints()[2].getX()
+  bottomLeftX = backdrop.getPoints()[3].getX()
+
+  top = backdrop.getPoints()[0].getY()
+  bottom = backdrop.getPoints()[2].getY()
+
+  topWidth = topRightX - topLeftX
+  bottomWidth = bottomRighX - bottomLeftX
+
+  panels = 4
+
+  topIncrement = topWidth/panels
+  bottomIncrement = bottomWidth/panels
+
+  lines = []
+  for i in range(panels):
+    lines.append(Line(Point(topLeftX + topIncrement*(i+1), top), Point(bottomLeftX + bottomIncrement*(i+1), bottom)))
+    lines[i].draw(win)
+  
+  return lines
+
+
 def createDalekBottom(win, x, y, size):
   backdropColor = color_rgb(150, 150, 100)
   baseColor = color_rgb(100, 100, 50)
 
   backdrop = createDalekBottomBackdrop(win, x, y, size, backdropColor)
-
+  panels = createDalekPanels(win, backdrop, size)
   base = createDalekBase(win, x, y, size, baseColor)
 
+  parts = [backdrop] + panels + [base]
 
-  return [backdrop, base]
+  return parts
 
 
 
