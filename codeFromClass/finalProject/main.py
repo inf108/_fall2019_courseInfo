@@ -87,18 +87,18 @@ def createDalekBottom(win, x, y, size):
 
 
 
-def isDalekAtEdge(winX, size, dalek):
-  rightX = winX + size*2
-  dalekX = dalek[0].getCenter().getX()
-  return (dalekX > rightX) 
-
-
 def createDalek(win, x, y, size):
   top = createDalekTop(win, x, y, size)
   bottom = createDalekBottom(win, x, y + size, size)
 
   return top + bottom
 
+
+
+def isDalekAtEdge(winX, size, dalek):
+  rightX = winX + size*2
+  dalekX = dalek[0].getCenter().getX()
+  return (dalekX > rightX) 
 
 
 def main():
