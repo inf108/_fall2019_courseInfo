@@ -88,11 +88,9 @@ def createDalekBottom(win, x, y, size):
 
 
 def isDalekAtEdge(winX, size, dalek):
-  rightX = winX - size - 0.1 * winX
-  leftX = size + winX*0.1
+  rightX = winX + size*2
   dalekX = dalek[0].getCenter().getX()
-  return (dalekX > rightX) or (dalekX < leftX )
-
+  return (dalekX > rightX) 
 
 
 def createDalek(win, x, y, size):
@@ -109,7 +107,7 @@ def main():
 
   dalekSize = 75
   dalekSpeed = 1
-  dalekX = 250
+  dalekX = 0 - dalekSize
   dalekY = 500
   timeBetweenFrames = 0.01
 
@@ -129,7 +127,8 @@ def main():
       part.move(dalekSpeed, 0)
     
     if isDalekAtEdge(winX, dalekSize, dalek):
-      dalekSpeed *= -1
+      for part in dalek:
+        part.move(dalekX-winX, 0)
 
     # to make testing easier, quit any time the screen is clicked
     if (win.checkMouse()):
