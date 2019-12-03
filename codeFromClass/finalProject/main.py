@@ -43,24 +43,21 @@ def createDalekBottomBackdrop(win, points, color):
 
 
 
-def createDalekBase(win, x, y, size, color):
+def createDalekBase(win, basePoints, size, color):
   bezel = 0.05
-  bottom = y + size*3
-  bottomL = x - 1.55*size
-  bottomR = x + 2*size
 
-  top = bottom-size*0.2
-  topLeftX = bottomL + size*bezel
-  topRightX = bottomR - size*bezel
-  bezelHeight = top+size*bezel
+  top = basePoints["bottom"] - size*0.2
+  topLeftX = basePoints["bottomLeft"] + size*bezel
+  topRightX = basePoints["bottomRight"] - size*bezel
+  bezelHeight = top + size*bezel
 
   points = []
-  points.append(Point(bottomL, bottom))
-  points.append(Point(bottomL, bezelHeight))
+  points.append(Point(basePoints["bottomLeft"], basePoints["bottom"]))
+  points.append(Point(basePoints["bottomLeft"], bezelHeight))
   points.append(Point(topLeftX, top))
   points.append(Point(topRightX, top))
-  points.append(Point(bottomR, bezelHeight))
-  points.append(Point(bottomR, bottom))
+  points.append(Point(basePoints["bottomRight"], bezelHeight))
+  points.append(Point(basePoints["bottomRight"], basePoints["bottom"]))
   
   p = Polygon(points)
   p.setFill(color)
@@ -109,7 +106,7 @@ def createDalekBottom(win, x, y, size):
 
   backdrop = createDalekBottomBackdrop(win, points, backdropColor)  
   panels = createDalekPanels(win, backdrop, size)
-  base = createDalekBase(win, x, y, size, baseColor)
+  base = createDalekBase(win, points, size, baseColor)
 
   parts = [backdrop] + panels + [base]
 
