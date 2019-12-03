@@ -81,6 +81,9 @@ def main():
     for part in dalek:
       part.move(dalekSpeed, 0)
     
+    if isDalekAtEdge(winX, dalekSize, dalek):
+      dalekSpeed *= -1
+
     # to make testing easier, quit any time the screen is clicked
     if (win.checkMouse()):
       quit()
