@@ -74,6 +74,16 @@ def createDalekBase(win, x, y, size, color):
   return p
 
 
+def createDalekBottom(win, x, y, size):
+  backdropColor = color_rgb(150, 150, 100)
+  baseColor = color_rgb(100, 100, 50)
+
+  backdrop = createDalekBottomBackdrop(win, x, y, size, backdropColor)
+
+  base = createDalekBase(win, x, y, size, baseColor)
+
+
+  return [backdrop, base]
 
 
 
