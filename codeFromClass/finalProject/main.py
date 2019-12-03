@@ -41,10 +41,13 @@ def createDalekBottom(win, x, y, size):
 
   return [p]
 
-def isDalekMoving(winX, size, dalek):
-  stoppingPointX = (winX - size - 0.1 * winX)
+def isDalekAtEdge(winX, size, dalek):
+  rightX = winX - size - 0.1 * winX
+  leftX = size + winX*0.1
   dalekX = dalek[0].getCenter().getX()
-  return stoppingPointX >= dalekX
+  return (dalekX > rightX) or (dalekX < leftX )
+
+
 
 def createDalek(win, x, y, size):
   top = createDalekTop(win, x, y, size)
@@ -73,7 +76,7 @@ def main():
   tardis = createTardis(win, tardisX, tardisY, tardisSize)
   dalek = createDalek(win, dalekX, dalekY, dalekSize)
 
-  while (isDalekMoving(winX, dalekSize, dalek)):
+  while (True):
     
     for part in dalek:
       part.move(dalekSpeed, 0)
