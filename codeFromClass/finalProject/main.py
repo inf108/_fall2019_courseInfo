@@ -47,6 +47,28 @@ def createDalekBottomBackdrop(win, x, y, size, color):
   return p
 
 
+
+def createDalekBase(win, x, y, size, color):
+  bezel = 0.05
+  bottom = y + size*3
+  bottomL = x - 1.55*size
+  bottomR = x + 2*size
+
+  top = bottom-size*0.2
+  topLeftX = bottomL + size*bezel
+  topRightX = bottomR - size*bezel
+  bezelHeight = top+size*bezel
+
+  points = []
+  points.append(Point(bottomL, bottom))
+  points.append(Point(bottomL, bezelHeight))
+  points.append(Point(topLeftX, top))
+  points.append(Point(topRightX, top))
+  points.append(Point(bottomR, bezelHeight))
+  points.append(Point(bottomR, bottom))
+  
+  p = Polygon(points)
+  p.setFill(color)
   p.draw(win)
 
   return [p]
