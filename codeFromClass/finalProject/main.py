@@ -1,4 +1,5 @@
 from graphics import *
+from tardis import *
 
 def createCircle(win, x, y, size, color):
   c = Circle(Point(x,y), size)
@@ -61,9 +62,14 @@ def main():
   dalekY = 500
   timeBetweenFrames = 0.01
 
+  tardisX = 280
+  tardisY = 180
+  tardisSize = 300
+
   win = GraphWin("Dalek", winX, winY)
 
-  dalek = createDalek(win, dalekX, dalekY, size)
+  tardis = createTardis(win, tardisX, tardisY, tardisSize)
+  dalek = createDalek(win, dalekX, dalekY, dalekSize)
   
   while (isDalekMoving(winX, size, dalek)):
     
