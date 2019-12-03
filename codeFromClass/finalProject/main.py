@@ -27,7 +27,7 @@ def createDalekTop(win, x, y, size):
   bodyColor = "grey"
   
   c = createCircle(win, x, y, size, domeColor)
-  r = createRectangle(win, x - size, y, size, bodyColor)
+  r = createDalekTorso(win, x - size, y, size, bodyColor)
 
   return [c, r]
 
