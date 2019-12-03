@@ -71,7 +71,9 @@ def createDalekBase(win, x, y, size, color):
   p.setFill(color)
   p.draw(win)
 
-  return [p]
+  return p
+
+
 
 
 
