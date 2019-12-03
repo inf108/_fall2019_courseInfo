@@ -8,9 +8,9 @@ def createCircle(win, x, y, size, color):
   return c
 
 def createRectangle(win, x, y, size, bodyColor):
-  topLeftX = x - size
+  topLeftX = x 
   topLeftY = y
-  bottomRightX = x + size
+  bottomRightX = x + size*2
   bottomRightY = y + size
   
   r = Rectangle(Point(topLeftX, topLeftY), Point(bottomRightX, bottomRightY))
@@ -23,7 +23,7 @@ def createDalekTop(win, x, y, size):
   bodyColor = "grey"
   
   c = createCircle(win, x, y, size, domeColor)
-  r = createRectangle(win, x, y, size, bodyColor)
+  r = createRectangle(win, x - size, y, size, bodyColor)
 
   return [c, r]
 
