@@ -90,10 +90,4 @@ def main():
 
     time.sleep(timeBetweenFrames)
 
-
-
-  
-  win.getMouse() # Pause to view result
-  win.close()    # Close window when done
-
 main()
