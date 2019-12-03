@@ -7,6 +7,8 @@ def createCircle(win, x, y, size, color):
   c.draw(win)
   return c
 
+
+
 def createRectangle(win, x, y, size, bodyColor):
   topLeftX = x 
   topLeftY = y
@@ -18,6 +20,8 @@ def createRectangle(win, x, y, size, bodyColor):
   r.draw(win)
   return r
 
+
+
 def createDalekTop(win, x, y, size):
   domeColor = "grey"
   bodyColor = "grey"
@@ -26,6 +30,8 @@ def createDalekTop(win, x, y, size):
   r = createRectangle(win, x - size, y, size, bodyColor)
 
   return [c, r]
+
+
 
 def createDalekBottom(win, x, y, size):
   top = y
@@ -41,6 +47,8 @@ def createDalekBottom(win, x, y, size):
 
   return [p]
 
+
+
 def isDalekAtEdge(winX, size, dalek):
   rightX = winX - size - 0.1 * winX
   leftX = size + winX*0.1
@@ -54,6 +62,7 @@ def createDalek(win, x, y, size):
   bottom = createDalekBottom(win, x, y + size, size)
 
   return top + bottom
+
 
 
 def main():
