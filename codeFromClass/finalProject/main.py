@@ -69,15 +69,22 @@ def main():
 
   win = GraphWin("Dalek", winX, winY)
 
+  # for easy bug, swap these
   tardis = createTardis(win, tardisX, tardisY, tardisSize)
   dalek = createDalek(win, dalekX, dalekY, dalekSize)
-  
+
   while (isDalekMoving(winX, dalekSize, dalek)):
     
     for part in dalek:
       part.move(dalekSpeed, 0)
     
+    # to make testing easier, quit any time the screen is clicked
+    if (win.checkMouse()):
+      quit()
+
     time.sleep(timeBetweenFrames)
+
+
 
   
   win.getMouse() # Pause to view result
