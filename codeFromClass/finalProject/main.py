@@ -9,15 +9,15 @@ def createCircle(win, x, y, size, color):
 
 
 
-def createRectangle(win, x, y, size, bodyColor):
-  topLeftX = x 
-  topLeftY = y
-  bottomRightX = x + size*2
-  bottomRightY = y + size
-  
-  r = Rectangle(Point(topLeftX, topLeftY), Point(bottomRightX, bottomRightY))
-  r.setFill(bodyColor)
+def createRectangle(win, x, y, size, width, height, color):
+  r = Rectangle(Point(x, y), Point(x + size*width, y + size*height))
+  r.setFill(color)
   r.draw(win)
+  return r
+
+  
+def createDalekTorso(win, x, y, size, bodyColor):
+  r = createRectangle(win, x, y, size, 2, 1, bodyColor)
   return r
 
 
