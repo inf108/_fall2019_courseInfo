@@ -33,16 +33,20 @@ def createDalekTop(win, x, y, size):
 
 
 
-def createDalekBottom(win, x, y, size):
-  top = y
+def createDalekBottomBackdrop(win, x, y, size, color):
   bottom = y + size*3
   topL = x - size
   topR = x + size
   bottomL = x - 1.55 * size
   bottomR = x + 2 * size
 
-  p = Polygon(Point(topL, top), Point(topR, top), Point(bottomR, bottom), Point(bottomL, bottom))
-  p.setFill("grey")
+  p = Polygon(Point(topL, y), Point(topR, y), Point(bottomR, bottom), Point(bottomL, bottom))
+  p.setFill(color)
+  p.draw(win)
+
+  return p
+
+
   p.draw(win)
 
   return [p]
