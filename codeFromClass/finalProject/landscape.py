@@ -49,3 +49,10 @@ def createSky(win, winX, winY):
   sky.draw(win)
   return sky
 
+def createLandscape(win, x, y):
+  sky = createSky(win, x, y)
+  stars = createStars(win, x, y, 100)
+  hills = createHills(win, x, y, 0.6)
+  ground = createGround(win, x, y, 0.8)
+
+  
