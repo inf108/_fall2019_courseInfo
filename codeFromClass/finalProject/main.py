@@ -23,11 +23,11 @@ def createDalekTorso(win, x, y, size, bodyColor):
 
 
 def createDalekTop(win, x, y, size):
-  domeColor = "grey"
-  bodyColor = "grey"
+  color = color_rgb(150, 150, 100)
+  darkColor = color_rgb(100, 100, 50)
   
-  c = createCircle(win, x, y, size, domeColor)
-  r = createDalekTorso(win, x - size, y, size, bodyColor)
+  c = createCircle(win, x, y, size, color)
+  r = createDalekTorso(win, x - size, y, size, color)
 
   return [c, r]
 
