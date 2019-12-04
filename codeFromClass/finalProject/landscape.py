@@ -42,3 +42,10 @@ def createStars(win, winX, winY, number):
     stars[i].draw(win)
   return stars
 
+def createSky(win, winX, winY):
+  color = color_rgb(random.randint(0, 10), random.randint(0, 10), random.randint(20, 50))
+  sky = Rectangle(Point(0,0), Point(winX, winY))
+  sky.setFill(color)
+  sky.draw(win)
+  return sky
+
