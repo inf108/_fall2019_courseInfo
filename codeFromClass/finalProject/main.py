@@ -84,21 +84,37 @@ def createDalekPanels(win, points, size, numberOfPanels):
 
 
 def createDalekCircles(win, points, size, color):
+  # TODO: come up with model that doesn't require fudge factors
+  numberOfPanels = 4
+  circlesPerPanel = 5
+  topPanelWidth = (points["topRight"] - points["topLeft"])/numberOfPanels
+  dy = (points["bottom"]-points["top"])/(circlesPerPanel+1)
+  dx = (points["topRight"] - points["topLeft"])/(numberOfPanels*2+1)*2.18
+  dxBottom = (points["bottomRight"] - points["bottomLeft"])/(numberOfPanels*2+1)
+  ddx = (dx + dxBottom)/(numberOfPanels+1)*0.35
+  dLeftX = (points["bottomLeft"] - points["topLeft"])/2/(circlesPerPanel+1)
+  print(dLeftX)
 
-  topWidth = topRightX - topLeftX
-  bottomWidth = bottomRighX - bottomLeftX
+  radiusIncrement = size*0.013
 
-  panels = 4
+  circles = []
+  y = points["top"] - dy*0.33
+  r = topPanelWidth/3
+  #print(ddx)
+  for i in range(circlesPerPanel):
+    y += dy
+    r += radiusIncrement
+    dx += ddx
+    x = points["topLeft"] + dLeftX*(i + 2) + topPanelWidth/2
 
-  topIncrement = topWidth/panels
-  bottomIncrement = bottomWidth/panels
+    for j in range(numberOfPanels):
+      circles.append(createCircleOutline(win, x, y, r))
+      x += dx
 
-  lines = []
-  for i in range(panels):
-    lines.append(Line(Point(topLeftX + topIncrement*(i+1), top), Point(bottomLeftX + bottomIncrement*(i+1), bottom)))
-    lines[i].draw(win)
+  for circle in circles:
+    circle.setOutline(color)
   
-  return lines
+  return circles
 
 
 def createDalekBottom(win, x, y, size):
