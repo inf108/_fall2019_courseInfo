@@ -25,14 +25,32 @@ def createDalekTorso(win, x, y, size, bodyColor):
 
 
 
+def createDalekEyeStalk(win, x, y, size, color, darkColor):
+  eyePoints = []
+  eyePoints.append(Point(x+size*1.9, y-size*0.45))
+  eyePoints.append(Point(x+size*2.2, y-size*0.65))
+  eyePoints.append(Point(x+size*2.2, y-size*0.25))
+  eye = Polygon(eyePoints)
+  eye.setFill("black")
+  eye.draw(win)
+
+  stalk = createRectangle(win, x+size*0.5, y-size*0.5, size, 1.5, 0.1, "grey")
+  ball = createCircle(win, x+size*1.5, y-size*0.45, size*0.15, "lightGrey")
+
+  return stalk + ball + [eye]
+
+
+
 def createDalekTop(win, x, y, size):
   color = color_rgb(150, 150, 100)
   darkColor = color_rgb(100, 100, 50)
   
-  c = createCircle(win, x, y, size, color)
-  r = createDalekTorso(win, x - size, y, size, color)
+  eyeStalk = createDalekEyeStalk(win, x, y, size, color, darkColor)
+  dome = createCircle(win, x, y, size, color)
+  torso = createDalekTorso(win, x - size, y, size, color)
+  
 
-  return c+r
+  return dome + torso + eyeStalk
 
 
 
