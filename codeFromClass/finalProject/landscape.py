@@ -34,3 +34,11 @@ def createHills(win, winX, winY, height):
 
   return [hill]
 
+def createStars(win, winX, winY, number):
+  stars = []
+  for i in range(number):
+    stars.append(Point(random.randint(0, winX), random.randint(0, winY)))
+    stars[i].setOutline(color_rgb(random.randint(200, 255), random.randint(200, 255), random.randint(200, 255)))
+    stars[i].draw(win)
+  return stars
+
