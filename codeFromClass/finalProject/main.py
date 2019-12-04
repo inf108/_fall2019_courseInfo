@@ -40,11 +40,37 @@ def createDalekTorsoStripes(win, x, y, size, color):
 
 
 
+def createDalekWhisk(win, x, y, size):
+  left = x + size*2
+  right = left + size * 1.5
+  y += size
+
+  stalk = Line(Point(left, y ), Point(right, y ))
+  stalk.setOutline("grey")
+  stalk.setWidth(3)
+  stalk.draw(win)
+
+  left += size*0.3
+
+  whisk = []
+  whisk.append(Oval(Point(left, y+size*0.1), Point(right, y-size*0.1)))
+  whisk.append(Oval(Point(left, y+size*0.05), Point(right, y-size*0.05)))
+  whisk.append(Oval(Point(left, y+size*0.15), Point(right, y-size*0.15)))
+
+  for wire in whisk:
+    wire.setOutline("grey")
+    wire.draw(win)
+
+  return whisk + [stalk]
+
+
+
 def createDalekTorso(win, x, y, size, color, darkColor):
   r = createRectangle(win, x, y, size, 2, 1, color)
   stripes = createDalekTorsoStripes(win, x, y, size, darkColor)
+  whisk = createDalekWhisk(win, x, y, size)
 
-  return r + stripes
+  return r + stripes + whisk
 
 
 
