@@ -56,3 +56,10 @@ def createLandscape(win, x, y):
   ground = createGround(win, x, y, 0.8)
 
   
+
+'''
+win = GraphWin("Landscape", 640, 480)
+createLandscape(win, 640, 480)
+win.getMouse() # Pause to view result
+win.close()    # Close window when done
+'''
