@@ -19,9 +19,25 @@ def createRectangle(win, x, y, size, width, height, color):
   return [r]
 
 
-def createDalekTorso(win, x, y, size, bodyColor):
-  r = createRectangle(win, x, y, size, 2, 1, bodyColor)
-  return r
+
+def createDalekTorso(win, x, y, size, color, darkColor):
+  r = createRectangle(win, x, y, size, 2, 1, color)
+
+  numberOfStripes = 5
+  width = 12
+  spaceBetweenStripes = size/(numberOfStripes-1)
+  stripes = []
+  left = x - size*0.05
+  right = x + size*2.05
+
+  for i in range(numberOfStripes):
+    height = y + spaceBetweenStripes*i - width/2 + 1 # one pixel offset required to align with bottom
+    stripes.append(Line(Point(left, height), Point(right, height)))
+    stripes[i].setOutline(darkColor)
+    stripes[i].setWidth(width)
+    stripes[i].draw(win)
+
+  return r + stripes
 
 
 
@@ -47,7 +63,7 @@ def createDalekTop(win, x, y, size):
   
   eyeStalk = createDalekEyeStalk(win, x, y, size, color, darkColor)
   dome = createCircle(win, x, y, size, color)
-  torso = createDalekTorso(win, x - size, y, size, color)
+  torso = createDalekTorso(win, x - size, y, size, color, darkColor)
   
 
   return dome + torso + eyeStalk
