@@ -20,12 +20,11 @@ def createRectangle(win, x, y, size, width, height, color):
 
 
 
-def createDalekTorso(win, x, y, size, color, darkColor):
-  r = createRectangle(win, x, y, size, 2, 1, color)
-
+def createDalekTorsoStripes(win, x, y, size, color):
   numberOfStripes = 5
   width = 12
   spaceBetweenStripes = size/(numberOfStripes-1)
+
   stripes = []
   left = x - size*0.05
   right = x + size*2.05
@@ -33,9 +32,17 @@ def createDalekTorso(win, x, y, size, color, darkColor):
   for i in range(numberOfStripes):
     height = y + spaceBetweenStripes*i - width/2 + 1 # one pixel offset required to align with bottom
     stripes.append(Line(Point(left, height), Point(right, height)))
-    stripes[i].setOutline(darkColor)
+    stripes[i].setOutline(color)
     stripes[i].setWidth(width)
     stripes[i].draw(win)
+
+  return stripes
+
+
+
+def createDalekTorso(win, x, y, size, color, darkColor):
+  r = createRectangle(win, x, y, size, 2, 1, color)
+  stripes = createDalekTorsoStripes(win, x, y, size, darkColor)
 
   return r + stripes
 
