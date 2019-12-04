@@ -25,3 +25,12 @@ def createHills(win, winX, winY, height):
     hills.append(Point(x, random.randint(int(height*winY), winY)))
     x += random.randint(int(winX*0.05), int(winX*0.3))
   hills.append(Point(winX, winY))
+
+  hill = Polygon(hills)
+  hillColor = randomColor()
+  hill.setOutline(hillColor)
+  hill.setFill(hillColor)
+  hill.draw(win)
+
+  return [hill]
+
