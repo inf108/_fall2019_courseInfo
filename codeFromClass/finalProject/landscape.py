@@ -17,3 +17,11 @@ def createGround(win, x, y, height):
 
   return [ground]
 
+def createHills(win, winX, winY, height):
+  x = 0
+  hills = []
+  hills.append(Point(0, winY))
+  while (x < winX):
+    hills.append(Point(x, random.randint(int(height*winY), winY)))
+    x += random.randint(int(winX*0.05), int(winX*0.3))
+  hills.append(Point(winX, winY))
