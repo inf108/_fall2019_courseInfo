@@ -1,21 +1,24 @@
 from graphics import *
 from tardis import *
 
+def createCircleOutline(win, x, y, size):
+  c = Circle(Point(x,y), size)
+  c.draw(win)
+  return [c]
+
 def createCircle(win, x, y, size, color):
   c = Circle(Point(x,y), size)
   c.setFill(color)
   c.draw(win)
-  return c
-
-
+  return [c]
 
 def createRectangle(win, x, y, size, width, height, color):
   r = Rectangle(Point(x, y), Point(x + size*width, y + size*height))
   r.setFill(color)
   r.draw(win)
-  return r
+  return [r]
 
-  
+
 def createDalekTorso(win, x, y, size, bodyColor):
   r = createRectangle(win, x, y, size, 2, 1, bodyColor)
   return r
@@ -29,7 +32,7 @@ def createDalekTop(win, x, y, size):
   c = createCircle(win, x, y, size, color)
   r = createDalekTorso(win, x - size, y, size, color)
 
-  return [c, r]
+  return c+r
 
 
 
@@ -39,7 +42,7 @@ def createDalekBottomBackdrop(win, points, color):
   p.setFill(color)
   p.draw(win)
 
-  return p
+  return [p]
 
 
 
@@ -63,7 +66,7 @@ def createDalekBase(win, basePoints, size, color):
   p.setFill(color)
   p.draw(win)
 
-  return p
+  return [p]
 
 
 
@@ -94,7 +97,7 @@ def createDalekCircles(win, points, size, color):
   ddx = (dx + dxBottom)/(numberOfPanels+1)*0.35
   dLeftX = (points["bottomLeft"] - points["topLeft"])/2/(circlesPerPanel+1)
   print(dLeftX)
-
+  
   radiusIncrement = size*0.013
 
   circles = []
@@ -106,9 +109,9 @@ def createDalekCircles(win, points, size, color):
     r += radiusIncrement
     dx += ddx
     x = points["topLeft"] + dLeftX*(i + 2) + topPanelWidth/2
-
+    
     for j in range(numberOfPanels):
-      circles.append(createCircleOutline(win, x, y, r))
+      circles += createCircleOutline(win, x, y, r)
       x += dx
 
   for circle in circles:
@@ -136,9 +139,7 @@ def createDalekBottom(win, x, y, size):
   base = createDalekBase(win, points, size, darkColor)
   circles = createDalekCircles(win, points, size, darkColor)
 
-  parts = [backdrop] + panels + [base] + circles
-
-  return parts
+  return backdrop + panels + base + circles
 
 
 
