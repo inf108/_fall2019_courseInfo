@@ -118,8 +118,10 @@ def createDalekCircles(win, points, size, color):
 
 
 def createDalekBottom(win, x, y, size):
-  backdropColor = color_rgb(150, 150, 100)
-  baseColor = color_rgb(100, 100, 50)
+  color = color_rgb(150, 150, 100)
+  darkColor = color_rgb(100, 100, 50)
+  numberOfPanels = 4
+  circlesPerPanel = 5
 
   points = {}
   points["topLeft"] = x - size
@@ -129,11 +131,12 @@ def createDalekBottom(win, x, y, size):
   points["top"] = y
   points["bottom"] = y + size*3
 
-  backdrop = createDalekBottomBackdrop(win, points, backdropColor)  
-  panels = createDalekPanels(win, backdrop, size)
-  base = createDalekBase(win, points, size, baseColor)
+  backdrop = createDalekBottomBackdrop(win, points, color)  
+  panels = createDalekPanels(win, points, size, numberOfPanels)
+  base = createDalekBase(win, points, size, darkColor)
+  circles = createDalekCircles(win, points, size, darkColor)
 
-  parts = [backdrop] + panels + [base]
+  parts = [backdrop] + panels + [base] + circles
 
   return parts
 
