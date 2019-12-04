@@ -244,7 +244,7 @@ def main():
   tardis = createTardis(win, tardisX, tardisY, tardisSize)
   dalek = createDalek(win, dalekX, dalekY, dalekSize)
 
-  testDalek = createDalek(win, 500, 200, 100)
+  #testDalek = createDalek(win, 500, 200, 100)
 
   while (True):
     
