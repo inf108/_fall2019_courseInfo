@@ -67,14 +67,23 @@ def createDalekBase(win, basePoints, size, color):
 
 
 
-def createDalekPanels(win, backdrop, size):
-  topLeftX = backdrop.getPoints()[0].getX()
-  topRightX = backdrop.getPoints()[1].getX()
-  bottomRighX = backdrop.getPoints()[2].getX()
-  bottomLeftX = backdrop.getPoints()[3].getX()
+def createDalekPanels(win, points, size, numberOfPanels):
+  topWidth = points["topRight"] - points["topLeft"]
+  bottomWidth = points["bottomRight"] - points["bottomLeft"]
 
-  top = backdrop.getPoints()[0].getY()
-  bottom = backdrop.getPoints()[2].getY()
+  topIncrement = topWidth/numberOfPanels
+  bottomIncrement = bottomWidth/numberOfPanels
+
+  lines = []
+  for i in range(numberOfPanels):
+    lines.append(Line(Point(points["topLeft"] + topIncrement*(i+1), points["top"]), Point(points["bottomLeft"] + bottomIncrement*(i+1), points["bottom"])))
+    lines[i].draw(win)
+  
+  return lines
+
+
+
+def createDalekCircles(win, points, size, color):
 
   topWidth = topRightX - topLeftX
   bottomWidth = bottomRighX - bottomLeftX
