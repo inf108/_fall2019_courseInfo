@@ -2,7 +2,7 @@ from graphics import *
 import random
 
 def rand255():
-  return 
+  return random.randint(0, 255)
 
 def randomColor():
   return (color_rgb(rand255(), rand255(), rand255()))
