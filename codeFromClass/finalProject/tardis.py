@@ -73,8 +73,13 @@ def createTardis(win, x, y, size):
   topLight.setFill(lightColor)
   topLight.setOutline(trimBlue)
   topLight.draw(win)
+
+  topOfLightPoints = []
+  topOfLightPoints.append(Point(x+size*0.44,y-size*0.2))
+  topOfLightPoints.append(Point(x+size*0.56, y-size*0.2))
+  topOfLightPoints.append(Point(x+size*0.5, y-size*0.23))
   
-  topOfLight = Polygon(Point(x+size*0.44,y-size*0.2), Point(x+size*0.56, y-size*0.2), Polygon(x+size*0.5, y-size*0.23))
+  topOfLight = Polygon(topOfLightPoints)
   topOfLight.setFill(trimBlue)
   topOfLight.draw(win)
   
@@ -117,7 +122,7 @@ def createTardis(win, x, y, size):
   
   for panel in panels:
     panel.setFill(panelBlue)
-
+  
   panels[0].setFill(color_rgb(20,20,70))
   panels[1].setFill(color_rgb(255,255,230))
   panels[1].setOutline(trimBlue)
@@ -127,18 +132,21 @@ def createTardis(win, x, y, size):
   panels[2].setWidth(2)
   panels[-1].setFill(color_rgb(230, 230, 200))
 
+  
   for panel in panels:
     panel.draw(win)
+    
   
-  topSign = [] 
+  topSign = []
+  
   for i in range(3):
-    topSign.append(Text(panels[0].getCenter(), "")
-
+    topSign.append(Text(panels[0].getCenter(), ""))
+                   
   
-  topSign[0].setText = ("POLICE            BOX")
-  topSign[1].setText = ("PUBLIC") 
+  topSign[0].setText("POLICE            BOX")
+  topSign[1].setText("PUBLIC") 
   topSign[1].move(17,5)
-  topSign[2].setText = ("CALL")
+  topSign[2].setText("CALL")
   topSign[2].move(17,-5)
 
   topSign[0].setSize(26)
@@ -148,6 +156,7 @@ def createTardis(win, x, y, size):
   for text in topSign:
     text.setTextColor("white")
     text.draw(win)
+    print(text)
 
   for item in windowPanes:
     item.setOutline(trimBlue)
@@ -155,15 +164,15 @@ def createTardis(win, x, y, size):
     item.draw(win)
 
   doorSign = []
-  doorSign.append(Text(panels[-1].getCenter()), "POLICE TELEPHONE")
-  doorSign.append(Text(panels[-1].getCenter()), "FREE")
-  doorSign.append(Text(panels[-1].getCenter()), "FOR USE OF")
-  doorSign.append(Text(panels[-1].getCenter()), "PUBLIC")
-  doorSign.append(Text(panels[-1].getCenter()), "ADVICE & ASSISTANCE")
-  doorSign.append(Text(panels[-1].getCenter()), "OBTAINABLE IMMEDIATELY")
-  doorSign.append(Text(panels[-1].getCenter()), "OFFICERS & CARS")
-  doorSign.append(Text(panels[-1].getCenter()), "RESPOND TO ALL CALLS")
-  doorSign.append(Text(panels[-1].getCenter()), "PULL TO OPEN")
+  doorSign.append(Text(panels[-1].getCenter(), "POLICE TELEPHONE"))
+  doorSign.append(Text(panels[-1].getCenter(), "FREE"))
+  doorSign.append(Text(panels[-1].getCenter(), "FOR USE OF"))
+  doorSign.append(Text(panels[-1].getCenter(), "PUBLIC"))
+  doorSign.append(Text(panels[-1].getCenter(), "ADVICE & ASSISTANCE"))
+  doorSign.append(Text(panels[-1].getCenter(), "OBTAINABLE IMMEDIATELY"))
+  doorSign.append(Text(panels[-1].getCenter(), "OFFICERS & CARS"))
+  doorSign.append(Text(panels[-1].getCenter(), "RESPOND TO ALL CALLS"))
+  doorSign.append(Text(panels[-1].getCenter(), "PULL TO OPEN"))
 
   dy = panelHeight - size*0.1
   dy = dy/9*0.9
@@ -172,7 +181,10 @@ def createTardis(win, x, y, size):
     doorSign[i].move(0, dy*i - (panelHeight-size*0.1)/2 + dy)
     doorSign[i].draw(win)
   
-  
-
-
+'''
+win = GraphWin("Tardis", 500, 800)
+createTardis(win, 100, 100, 300)
+win.getMouse() # Pause to view result
+win.close()    # Close window when done
+'''
 
