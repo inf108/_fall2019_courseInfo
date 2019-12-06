@@ -241,7 +241,6 @@ def main():
 
   win = GraphWin("Dalek", winX, winY)
 
-  # for easy bug, swap these
   landscape = createLandscape(win, winX, winY)
   tardis = createTardis(win, tardisX, tardisY, tardisSize)
   dalek = createDalek(win, dalekX, dalekY, dalekSize)
