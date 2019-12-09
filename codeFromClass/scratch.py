@@ -6,7 +6,9 @@ isRunning = True
 while isRunning:
   text = input("Type something:")
   print(text)
-  isRunning = time.time() - startTime < timeLimit
+  elapsedTime = time.time() - startTime
+  isRunning = elapsedTime < timeLimit
+  print(isRunning)
   
 
 
